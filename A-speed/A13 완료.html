@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; list-style: none; }
+        .container { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .login { width: 100px; height: 50px; background-color: skyblue; text-align: center; line-height: 50px; border-radius: 5px; color: #fff; cursor: pointer; }
+        .login:active { background-color: rgb(91, 190, 230); }
+        .log { display: none; }
+        #modal-trigger { display: none; }
+        #modal-trigger:checked ~ .log { display: flex; }
+        .close { width: 50px; height: 30px; background-color: red; text-align: center; line-height: 30px; color: #fff; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="modal-trigger" hidden>
+        <label for="modal-trigger" class="login">로그인</label>
+        <div class="log">
+            <ul>
+                <li>계정 로그인</li>
+                <li>안전한 서비스를 위해 로그인이 필요합니다.</li>
+                <li>계속하려면 아래에 등록된 이메일과 비밀번호를 입력해주세요.</li>
+                <li>로그인 계속</li>
+            </ul>
+            <label for="modal-trigger" class="close">X</label>
+        </div>
+    </div>
+</body>
+</html>

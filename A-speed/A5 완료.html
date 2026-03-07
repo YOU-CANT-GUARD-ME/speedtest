@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A5</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        .container {  height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+        .container h1 { font-size: 36px; margin-bottom: 40px; }
+        .box-con { width: 700px; height: 320px; display: flex; flex-direction: column; justify-content: space-between; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.2); }
+        .box { display: flex; flex-direction: row; justify-content: space-between; align-items: center; height: 80px; border-bottom: 1px solid #ccc; padding: 0 20px; }
+        .text { display: flex; flex-direction: row; }
+        .text .col { margin-right: 10px; width: 80px; height: 30px; line-height: 30px; text-align: center; border-radius: 15px; background-color: rgb(71, 120, 255); color: #fff; font-weight: bold; }
+        .box:first-child .col { background-color: rgb(228, 0, 0); }
+        .box:last-child { border: none; }
+        .event { font-weight: bold; }
+        .date { color: #8a8a8a; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>공지사항</h1>
+        <div class="box-con">
+            <div class="box">
+                <div class="text">
+                    <div class="col red">중요</div>
+                    <div class="event">2026년 WorldSkills 대회 일정 안내</div>
+                </div>
+                <div class="date">2026-01-15</div>
+            </div>
+            <div class="box">
+                <div class="text">
+                    <div class="col">공지</div>
+                    <div class="event">웹디자인 기술대회 참가신청 마감</div>
+                </div>
+                <div class="date">2026-01-10</div>
+            </div>
+            <div class="box">
+                <div class="text">
+                    <div class="col">안내</div>
+                    <div class="event">온라인 교육과정 개설 안내</div>
+                </div>
+                <div class="date">2026-01-08</div>
+            </div>
+            <div class="box">
+                <div class="text">
+                    <div class="col">공지</div>
+                    <div class="event">2026년 1분기 교육일정 발표</div>
+                </div>
+                <div class="date">2026-01-05</div>
+            </div>
+            <div class="box">
+                <div class="text">
+                    <div class="col">안내</div>
+                    <div class="event">홈페이지 점검 일정 안내</div>
+                </div>
+                <div class="date">2026-01-03</div>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>

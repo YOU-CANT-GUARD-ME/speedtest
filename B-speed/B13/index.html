@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .videoBox { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+        .videoCtl { margin-top: 20px; width: 320px; height: 60px; display: flex; justify-content: space-between; align-items: center; }
+        label { width: 60px; height: 30px; background-color: #333; text-align: center; line-height: 30px; color: #fff; cursor: pointer; }
+        * { user-select: none; }
+    </style>
+</head>
+<body>
+    <div class="videoBox">
+        <video src="./B13/test-video.mp4"></video>
+
+        <div class="videoCtl">
+            <input type="radio" name="ctl" id="play" hidden>
+            <label for="play">재생</label>
+
+            <input type="radio" name="ctl" id="stop" hidden>
+            <label for="stop">정지</label>
+            
+            <input type="radio" name="ctl" id="tenPlus" hidden>
+            <label for="tenPlus">10s</label>
+
+            <input type="radio" name="ctl" id="tenMin" hidden>
+            <label for="tenMin">-10s</label>
+
+            <input type="radio" name="ctl" id="sound" hidden>
+            <label for="sound">음소기</label>
+
+        </div>        
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

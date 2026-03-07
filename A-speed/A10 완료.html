@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0; height: 100vh; display: grid; place-items: center; background-color: #fff; }
+        .shape { width: 420px; height: 420px; background-color: #ef2b3f; animation: morph 4s ease-in-out infinite; clip-path: polygon(50% 0%, 100% 100%, 0% 100%); }
+        @keyframes morph {
+            0%,100% { clip-path: polygon(50% 0%, 100% 100%, 100% 100%, 0% 100%, 0% 100%, 0% 100%); }
+            25% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%, 0% 100%); }
+            50% { clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 20% 100%, 0% 40%, 0% 40%); }
+            75% { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="shape"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3</title>
+    <style>
+        body { margin: 0; transition: .3s; background-color: #fff; color: #000; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .wrapper { padding: 20px; }
+        .toggle-label { padding: 10px 20px; background-color: #e0e0e0; cursor: pointer; transition: .3s; display: inline-block; }
+        #toggle { display: none; }
+        body:has(#toggle:checked) { background-color: #222; color: #fff; }
+        body:has(#toggle:checked) .toggle-label { background-color: #444; color: #fff; }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+
+    <div class="wrapper">
+        <label for="toggle" class="toggle-label">Toggle Theme</label>
+    </div>
+</body>
+</html>

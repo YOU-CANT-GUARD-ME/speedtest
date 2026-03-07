@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A9</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        .container { width: 100%; height: 100vh; background-image: url(../선수제공파일/A9/images/background.png); }
+        input { display: none; }
+        .stage { position: relative; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;  }
+        .track { display: flex; width: 300vw; justify-content: center; perspective: 1200px; transition: .3s ease; }
+        .scene { width: 100vw; display: flex; justify-content: center; gap: 80px; flex-shrink: 0; }
+        .card { width: 320px; text-align: center; color: #eee; transform: translateZ(0); }
+        .card img { width: 100%; height: 420px; object-fit: cover; box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
+        h4 { margin-top: 14px; font-size: 18px; }
+        .sub { font-size: 14px; color: #ccc; margin-top: 4px; }
+        .author { font-size: 13px; color: #999; }
+        .nav { position: absolute; bottom: 60px; width: 36px; height: 36px; border: 1px solid #aaa; color: #eee; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0.8; }
+        .prev { left: 50%; transform: translateX(-60px); }
+        .next { left: 50%; transform: translateX(24px); }
+        #s1:checked ~ .stage .track { transform: translateX(100vw); }
+        #s2:checked ~ .stage .track { transform: translateX(0); }
+        #s3:checked ~ .stage .track {transform: translateX(-100vw);}
+        .nav { display: none; }
+        #s1:checked ~ .stage .p1,#s1:checked ~ .stage .n1 { display: flex; }
+        #s2:checked ~ .stage .p2,#s2:checked ~ .stage .n2 { display: flex; }
+        #s3:checked ~ .stage .p3,#s3:checked ~ .stage .n3 { display: flex; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" name="slide" id="s1" checked>
+        <input type="radio" name="slide" id="s2">
+        <input type="radio" name="slide" id="s3">
+
+        <div class="stage">
+            <div class="track">
+                <div class="scene">
+                    <div class="card"><img src="../선수제공파일/A9/images/1.jpg" alt=""><h4>삼나무와 초록 밀밭</h4><p class="sub">Cypresses and Green Wheat Field</p><p class="author">Vincent van Gogh, 1889</p></div>
+                    <div class="card"><img src="../선수제공파일/A9/images/2.jpg" alt=""><h4>모델과 화가</h4><p class="sub">The Painter and His Model</p><p class="author">Pablo Picasso, 1928</p></div>
+                    <div class="card"><img src="../선수제공파일/A9/images/3.jpg" alt=""><h4>작은 거리</h4><p class="sub">The Little Street</p><p class="author">Johannes Vermeer</p></div>
+                </div>
+                <div class="scene">
+                    <div class="card"><img src="../선수제공파일/A9/images/4.jpg" alt=""><h4>빈도 알토비티</h4><p class="sub">Portrait of Bindo Altoviti</p><p class="author">Raphael</p></div>
+                    <div class="card"><img src="../선수제공파일/A9/images/5.jpg" alt=""><h4>나르시스의 변형</h4><p class="sub">Metamorphosis of Narcissus</p><p class="author">Dalí</p></div>
+                    <div class="card"><img src="../선수제공파일/A9/images/6.jpg" alt=""><h4>베노아의 성모</h4><p class="sub">The Benois Madonna</p><p class="author">Leonardo da Vinci</p></div>
+                </div>
+                <div class="scene">
+                    <div class="card"><img src="../선수제공파일/A9/images/7.jpg" alt=""><h4>과일 바구니 소년</h4><p class="sub">Boy with a Basket of Fruit</p><p class="author">Caravaggio</p></div>
+                    <div class="card"><img src="../선수제공파일/A9/images/8.jpg" alt=""><h4>들쥐</h4><p class="sub">Young Hare</p><p class="author">Dürer</p></div>
+                    <div class="card"><img src="../선수제공파일/A9/images/9.jpg" alt=""><h4>톨레도 풍경</h4><p class="sub">View of Toledo</p><p class="author">El Greco</p></div>
+                </div>                
+            </div>
+
+            <label for="s1" class="nav prev p1">&lt;</label>
+            <label for="s2" class="nav next n1">&gt;</label>
+            
+            <label for="s1" class="nav prev p2">&lt;</label>
+            <label for="s3" class="nav next n2">&gt;</label>
+            
+            <label for="s2" class="nav prev p3">&lt;</label>
+            <label for="s3" class="nav next n3">&gt;</label>
+        </div>
+    </div>
+</body>
+</html>

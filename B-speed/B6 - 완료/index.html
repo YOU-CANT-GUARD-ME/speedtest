@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B6</title>
+    <style>
+        * { margin: 0; padding: 0; list-style: none; }
+        .container { display: flex; justify-content: center; align-items: center; height: 900px }
+        .itembox { width: max-content; height: max-content; }
+        .item { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; width: 40%; }
+        .item li { cursor: pointer; }
+        .dragbox { width: 500px; height: 500px; border: 1px solid; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="itembox">
+            <ul class="item">
+                <li><img src="./B6/test-images/test1.gif" alt=""></li>
+                <li><img src="./B6/test-images/test1.jpg" alt=""></li>
+                <li><img src="./B6/test-images/test1.png" alt=""></li>
+                <li><img src="./B6/test-images/test2.gif" alt=""></li>
+                <li><img src="./B6/test-images/test2.jpg" alt=""></li>
+                <li><img src="./B6/test-images/test2.png" alt=""></li>
+            </ul>
+        </div>
+
+        <div class="dragbox">
+            <p>드래그하세요</p>
+        </div>
+        <button class="reset" onclick="">Reset</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
