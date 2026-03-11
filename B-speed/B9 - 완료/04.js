@@ -1,28 +1,19 @@
-// Get the container where the items will be displayed
 const container = document.querySelector('.container');
 
-class Star {
-
-    // Runs when the app starts
+class star {
     constructor () {
         const s = localStorage.getItem('star');
-
-        // If saved data exists → load it
-        // Otherwise → fetch data from data.json
         s ? (this.datas = JSON.parse(s), this.render()) : this.getData();
     }
 
-    // Saves data to localStorage and refreshes the UI
     update() {
         localStorage.setItem('star', JSON.stringify(this.datas));
         this.render();
     }
 
-    // Displays all items on the page
     render() {
-        container.innerHTML = "";
+        container.innerHTML = '';
 
-        // Loop through the data and create elements
         this.datas.forEach(e => {
             const div = document.createElement('div');
 
@@ -31,25 +22,21 @@ class Star {
             <h1>${e.name}</h1>
             <div>${e.desc}</div>
             </div>
-            <div class="star">${e.isStar ? '★' : '☆'}</div>`;
+            <div class="star">${e.isstar ? '★' : '☆'}</div>`;
 
-            // Toggle star when clicked
             div.querySelector('.star').onclick = () => {
-                e.isStar = !e.isStar;
+                e.isstar = !e.isstar
                 this.update();
             };
 
-            // Add item to the container
             container.append(div);
         });
     }
 
-    // Fetch data from the JSON file
-    async getData () {
+    async getData() {
         this.datas = await fetch('./data.json').then(r => r.json());
         this.update();
     }
 }
 
-// Start the app
-new Star();
+new star();

@@ -1,4 +1,4 @@
-const inputs = document.querySelectorAll('input');
+const input = document.querySelectorAll('input');
 
 inputs.forEach((input, i) => {
     input.addEventListener('input', (e) => {
@@ -7,6 +7,6 @@ inputs.forEach((input, i) => {
     });
 
     input.addEventListener('keydown', (e) => {
-        if (e.key === 'Backspace' && !input.value && i > 0) inputs[i - 1].focus();
+        if (e.key === 'Backspace' && !input.value && i > 0) input[i - 1].focus();
     });
 });

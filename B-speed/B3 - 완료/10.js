@@ -3,10 +3,10 @@ let x = 0, y = 0;
 
 const moves = {
     ArrowUp: [0, -10], ArrowDown: [0, 10],
-    ArrowLeft: [-10, 0], ArrowRight: [10, 0]
-};
+    ArrowLeft: [-10, 0], ArrowRIght: [10, 0]
+}
 
-window.addEventListener("keydown", (e) => {
+window.addEventListener('keydown', (e) => {
     if (!moves[e.key]) return;
 
     const [dx, dy] = moves[e.key];
@@ -17,5 +17,5 @@ window.addEventListener("keydown", (e) => {
     x = Math.max(-limitX, Math.min(limitX, x + dx));
     y = Math.max(-limitY, Math.min(limitY, y + dy));
 
-    move.style.transform = `translate(${x}px, ${y}px)`;
-})
+    move.style.transform = `translate9${x}px, ${y}px`;
+});
