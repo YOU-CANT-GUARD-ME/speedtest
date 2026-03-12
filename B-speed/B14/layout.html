@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; }
+        .container { width: 500px; height: 550px; box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 10px; display: flex; flex-direction: column; align-items: center; }
+        .container h2 { margin-top: 20px; }
+        .make { width: 100%; height: 50px; padding: 10px; }
+        .make input { padding: 5px; border: 1px solid #ccc; }
+        .make button { padding: 5px; border: none; }
+        .blue { background-color: rgb(39, 39, 218); color: #fff; }
+        .clear-btn { background-color: red; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>간단한 파이 그래프</h2>
+        <div class="make">
+            <input id="label" type="text" placeholder="한목명">
+            <input id="value" type="number" placeholder="값">
+            <button class="blue">추가</button>
+            <button class="clear-btn">초기화</button>
+        </div>
+
+        <canvas id="canvas" width="300" height="300"></canvas>
+
+        <div class="legend"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

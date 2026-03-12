@@ -6,18 +6,20 @@
     <title>A3</title>
     <style>
         body { margin: 0; transition: .3s; background-color: #fff; color: #000; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .wrapper { padding: 20px; }
-        .toggle-label { padding: 10px 20px; background-color: #e0e0e0; cursor: pointer; transition: .3s; display: inline-block; }
+        .wrapper { position: relative; padding: 5px; width: 150px; height: 30px; display: flex; align-items: center; background-color: #e0e0e0; border-radius: 20px; transition: .3s; }
+        .toggle-label { position: absolute; left: 5px; top: 5px; width: 30px; height: 30px; background-color: #222; border-radius: 50%; cursor: pointer; transition: .3s; display: inline-block; }
         #toggle { display: none; }
         body:has(#toggle:checked) { background-color: #222; color: #fff; }
-        body:has(#toggle:checked) .toggle-label { background-color: #444; color: #fff; }
+        body:has(#toggle:checked) .toggle-label { background-color: yellow; }
+        body:has(#toggle:checked) .wrapper { background-color: darkblue; }
+        #toggle:checked + .wrapper .toggle-label { transform: translateX(120px); }
     </style>
 </head>
 <body>
     <input type="checkbox" id="toggle">
 
     <div class="wrapper">
-        <label for="toggle" class="toggle-label">Toggle Theme</label>
+        <label for="toggle" class="toggle-label"></label>
     </div>
 </body>
 </html>
