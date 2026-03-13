@@ -8,7 +8,7 @@ $("button").onclick = () => {
     data.push ({ k: lbl.value, v: +val.value, c: `hsl(${Math.random() * 360}, 70%, 60%)` });
     [lbl.value, val.value] = ["", ""];
     render();
-}
+} 
 
 function render() {
     const total = data.reduce((s, e) => s + e.v, 0);
@@ -20,17 +20,18 @@ function render() {
 
         ctx.beginPath();
         ctx.moveTo(250,250);
-        ctx.arc(250,250,250,start,start = angle);
+        ctx.arc(250,250,250,start,start + angle);
         ctx.fillStyle = c;
         ctx.fill();
 
+
         start += angle;
 
-        legend.innerHTML += `
+        legend.innerHTML = `
             <div class="legend-item">
                 <div class="legend-color" style="background-color: ${c}"></div>
                 <span>${k} (${(v / total * 100).toFixed(1)}%)</span>
-            </div>        
+            </div>
         `
-    });
+    })
 }

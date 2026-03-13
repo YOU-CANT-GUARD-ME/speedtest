@@ -1,60 +1,38 @@
 const $ = e => document.querySelector(e);
-const $$ = e => [...document.querySelectorAll(e)];
 
-const canvas = $("#canves");
-ctx = canvas.getContext("2d");
-const label = $("#label");
-const value = $("#value");
-const legend = $('.legend');
+const [canvas, legend, lbl, val] = ["#canvas", ".legend", "#labelInput", "#valueInput"].map($);
+const ctx = canvas.getContext('2d')
+const data = []
 
-let data = [];
-
-function rand() {
-    return `hsl(${Math.random()*360},70%,60%)`;
+$("button").onclick = () => {
+    if (!lbl.value || val.value <= 0) return;
+    data.push({k: lbl.value, v: +val.value, c: `hsl(${Math.random() * 360}, 70%, 60%)`});
+    [lbl.value, val.value] = ["", ""]
+    render();
 }
 
-function draw() {
-    ctx.clearRect(0,0,300,300);
-    let total = data.reduce((a,b) => a + b.v, 0);
-    let start = 0;
+function render() {
+    const total = data.reduce((s, e) => s + e.v, 0)
+    let start = -Math.PI / 2
+    legend.innerHTML = ""
+    ctx.clearRect(0, 0, 500, 500)
 
-    leged.innerHTML = "";
+    data.forEach(({k, v, c}) => {
+        const angle = (v / total) * Math.PI * 2
 
-    data.forEach(d => {
-        let angle = d.v/total * 2*Math.PI;
+        ctx.beginPath()
+        ctx.moveTo(250,250)
+        ctx.arc(250,250,250,start,start + angle)
+        ctx.fillStyle = c
+        ctx.fill()
 
-        ctx.beginPath();
-        ctx.moveTo(150,150);
-        ctx.arc(150,150,120,start,start+angle);
-        c.fillStyle = d.c;
-        ctx.fill();
-
-        start += angle;
+        start += angle
 
         legend.innerHTML += `
-        <div style="color:${d.c}">
-            ${d.l} (${((d.v/total)*100).toFixed(1)}%)
-        </div>`;
-    });
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: ${c}"></div>
+                <span>${k} (${(v / total * 100).toFixed(1)}%)</span>
+            </div>        
+        `
+    })
 }
-
-$('.blue').onclick = () => {
-    if (!label.value || value.value <= 0) return;
-
-    data.push({
-        l: label.value,
-        v: +value.value,
-        c: rand()
-    });
-
-    label.value = "";
-    value.value = "";
-
-    draw();
-};
-
-$('.clear-btn').onclick = () => {
-    data =[];
-    legend.innerHTML = "";
-    ctx.clearRect(0,0,300,300);
-};
