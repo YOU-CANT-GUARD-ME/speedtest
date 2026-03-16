@@ -6,7 +6,7 @@ const moves = {
     ArrowLeft: [-10, 0], ArrowRight: [10, 0]
 };
 
-window.addEventListener("keydown", (e) => {
+window.addEventListener('keydown', (e) => {
     if (!moves[e.key]) return;
 
     const [dx, dy] = moves[e.key];
@@ -18,4 +18,4 @@ window.addEventListener("keydown", (e) => {
     y = Math.max(-limitY, Math.min(limitY, y + dy));
 
     move.style.transform = `translate(${x}px, ${y}px)`;
-})
+});

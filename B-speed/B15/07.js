@@ -8,12 +8,12 @@ async function loadData() {
     render(rows);
 };
 
-function render(rows) {
+function  render(rows) {
     tableBody.innerHTML = '';
 
-    rows.splice((currentPage - 1) * 10, 10).forEach(rows => {
+    rows.splice((currentPage - 1) * 10, 10).forEach(row => {
         const tr = document.createElement('tr');
-        tr.innerHTML = rows.map(cell => `<td>${cell}</td>`).join('');
+        tr.innerHTML = row.map(cell => `<tr>${cell}</tr>`).join('');
         tableBody.append(tr);
     });
 
@@ -35,7 +35,7 @@ nextButton.onclick = () => {
     loadData();
 };
 
-pageButton.forEach((b, i) => {
+pageButtonl.forEach((b, i) => {
     b.onclick = () => {
         currentPage = i + 1;
         loadData();

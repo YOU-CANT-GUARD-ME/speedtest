@@ -8,13 +8,13 @@ async function loadData() {
     render(rows);
 };
 
-function render(rows) {
+function render() {
     tableBody.innerHTML = '';
 
-    rows.splice((currentPage - 1) * 10, 10).forEach(rows => {
+    rows.splice((currentPage - 1) * 10, 10).forEach(row => {
         const tr = document.createElement('tr');
-        tr.innerHTML = rows.map(cell => `<td>${cell}</td>`).join('');
-        tableBody.append(tr);
+        tr.innerHTML = row.map(cell => `<td>${cell}</td>`).join('');
+        table.append(tr);
     });
 
     previousButton.disabled = currentPage === 1;

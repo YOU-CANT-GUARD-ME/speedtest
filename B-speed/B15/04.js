@@ -6,14 +6,14 @@ async function loadData() {
         .split('\n')
         .map(r => r.split(','));
     render(rows);
-};
+}
 
 function render(rows) {
     tableBody.innerHTML = '';
 
-    rows.splice((currentPage - 1) * 10, 10).forEach(rows => {
+    rows.splice((currentPage - 1) * 10, 10).forEach(row => {
         const tr = document.createElement('tr');
-        tr.innerHTML = rows.map(cell => `<td>${cell}</td>`).join('');
+        tr.innerHTML = row.map(cell => `<td>${cell}</td>`).join('');
         tableBody.append(tr);
     });
 
