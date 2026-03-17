@@ -24,10 +24,10 @@ function render() {
                 <h3 class="todo-title">${t.title}</h3>
                 <div class="todo-badges">
                     <span class="badge priority-${t.priority}">
-                        ${t.priority == 'high' ? '높음' : t.priority == 'medium' ? '보통' : '낮음'}
+                    ${t.priority == 'high' ? '높음' : t.priority =='medium' ? '보통' : '낮음'}
                     </span>
                     <span class="badge status-badge">
-                        ${t.completed ? '완료' : '진행중'}
+                    ${t.completed ? '완료' : '진행중'}
                     </span>
                 </div>
             </div>
@@ -39,11 +39,9 @@ function render() {
                 </div>
             </div>
         </div>        
-        `).join('');
+            `).join('');
 };
 
 buttons.forEach((b, i) => {
-    b.onclick = () => {currentFilter = i; render();};
+    b.onclick = () => { currentFilter = i; render(); }
 });
-
-loadData();

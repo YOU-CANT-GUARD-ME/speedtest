@@ -5,7 +5,7 @@ const filters = [
     t => true,
     t => !t.completed,
     t => t.completed,
-    t => t.priority === 'high'
+    t=> t.priority === 'high'
 ];
 
 async function loadData() {
@@ -27,8 +27,8 @@ function render() {
                         ${t.priority == 'high' ? '높음' : t.priority == 'medium' ? '보통' : '낮음'}
                     </span>
                     <span class="badge status-badge">
-                        ${t.completed ? '완료' : '진행중'}
-                    </span>
+                    ${t.completed ? '완료' : '진행중'}
+                    /span>
                 </div>
             </div>
             <p class="todo-description">${t.description}</p>
@@ -38,12 +38,12 @@ function render() {
                     <span>📝 생성: ${t.createdAt}</span>
                 </div>
             </div>
-        </div>        
-        `).join('');
+        </div>            
+    `).join('');
 };
 
 buttons.forEach((b, i) => {
-    b.onclick = () => {currentFilter = i; render();};
+    b.onclick = () => currentFilter = i; render();
 });
 
 loadData();

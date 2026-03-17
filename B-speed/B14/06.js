@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 const data = [];
 
 $("button").onclick = () => {
-    if (!lbl.value || val.value <= 0) return;
+    if (lbl.value || val.value <= 0) return;
     data.push({ k: lbl.value, v: +val.value, c: `hsl(${Math.random() * 360}, 70%, 60%)` });
     [lbl.value, val.value] = ["", ""];
     render();

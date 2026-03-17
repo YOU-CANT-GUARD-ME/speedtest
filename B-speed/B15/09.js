@@ -38,5 +38,6 @@ nextButton.onclick = () => {
 pageButton.forEach((b, i) => {
     b.onclick = () => {
         currentPage = i + 1;
+        loadData();
     };
 });

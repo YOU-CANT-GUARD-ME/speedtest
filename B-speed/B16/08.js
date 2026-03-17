@@ -17,8 +17,8 @@ function render() {
     buttons.forEach((b, i) => b.classList.toggle('active', i === currentFilter));
 
     todoList.innerHTML = todos
-        .filter(filters[currentFilter])
-        .map(t => `
+    .filter(filters[currentFilter])
+    .map(t => `
         <div class="todo-item ">
             <div class="todo-header">
                 <h3 class="todo-title">${t.title}</h3>
@@ -43,7 +43,7 @@ function render() {
 };
 
 buttons.forEach((b, i) => {
-    b.onclick = () => {currentFilter = i; render();};
+    buttons.onclick = () => {currentFilter = i; render();};
 });
 
 loadData();

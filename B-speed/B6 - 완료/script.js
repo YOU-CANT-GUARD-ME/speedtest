@@ -1,9 +1,7 @@
 const $ = e => document.querySelector(e);
 const $$ = e => [...document.querySelectorAll(e)];
 
-const dragbox = $('.dragbox'),
-reset = $('.reset');
-itemList = $('.item');
+const dragbox = $(".dragbox"), itemList = $('.item');
 
 $$('.item li').forEach(li => {
     li.draggable = true;
@@ -20,11 +18,4 @@ dragbox.ondrop = e => {
     e.preventDefault();
     const d = $('.dragging');
     if (d) dragbox.append(d), d.classList.remove('dragging');
-};
-
-reset.onclick = () => {
-    $$('.item li, .dragbox li').forEach(li => {
-        li.classList.remove('dragging');
-        itemList.append(li);
-    });
 };

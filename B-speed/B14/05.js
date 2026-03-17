@@ -5,7 +5,7 @@ const data = [];
 
 $("button").onclick = () => {
     if (!lbl.value || val.value <= 0) return;
-    data.push({ k: lbl.value, v: +val.value, c: `hsl(${Math.random() * 360}, 70%, 60%)` });
+    data.push({ k: lbl.value, v: +val.value, c: `hsl(${Math.random() * 360},70%, 60%)` });
     [lbl.value, val.value] = ["", ""];
     render();
 };
@@ -31,6 +31,6 @@ function render() {
                 <div class="legend-color" style="background-color: ${c}"></div>
                 <span>${k} (${(v / total * 100).toFixed(1)}%)</span>
             </div>        
-        `;
+        `
     });
 };

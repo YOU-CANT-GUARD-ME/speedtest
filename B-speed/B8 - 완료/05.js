@@ -10,5 +10,5 @@ function createNotice (value) {
 
     newDiv.addEventListener('click', () => newDiv.remove());
 
-    setTimeout(() => newDiv.remove(), 3000);
+    setTimeout(() => newDiv.remove(), 5000);
 }

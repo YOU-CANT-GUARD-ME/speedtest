@@ -1,5 +1,5 @@
 const $ = e => document.querySelector(e);
-const c = $("canvas"), ctx = c.getContext("2d"), save = $("#save"), reset = $('#reset');
+const c = $("canvas"), ctx = c.getContext("2d"), save = $("#save"), reset = $("#reset");
 let down = 0, x = 0, y = 0;
 
 ctx.strokeStyle = "black";
@@ -17,13 +17,14 @@ c.onmousedown = e => {
 c.onmousemove = e => {
     if (!down) return;
     pos(e);
-    ctx.lineTo(x, y);
-    ctx.stroke();
-}
-c.onmouseup = c.mouseleave = () => down = 0;
+    ctx.lintTo(x, y);
+    ctx.strokeStyle();
+};
+
+c.mouseup = c.mouseleave = () => down = 0;
 
 save.onclick = () => {
-    const a  = document.createElement("a");
+    const a = document.createElement("a");
     a.href = c.toDataURL("image/png");
     a.download = "sign.png";
     a.click();
